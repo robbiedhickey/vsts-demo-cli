@@ -1,0 +1,62 @@
+{
+  "name": "vsts-demo-cli",
+  "description": "A cross-platform cli to illustrate interacting with VSTS",
+  "version": "0.0.1",
+  "author": "Robbie Hickey @robbiedhickey",
+  "bin": {
+    "vsts-demo-cli": "./bin/run"
+  },
+  "bugs": "https://github.com/robbiedhickey/vsts-demo-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.4.36",
+    "@oclif/config": "^1.6.33",
+    "@oclif/plugin-help": "^2.0.5",
+    "cli-table": "^0.3.1",
+    "cli-ux": "^4.7.3",
+    "inquirer": "^6.0.0",
+    "ora": "^3.0.0",
+    "vso-node-api": "^6.5.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.15.4",
+    "@oclif/test": "^1.1.0",
+    "chai": "^4.1.2",
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-oclif": "^1.5.1",
+    "eslint-config-prettier": "^2.9.0",
+    "globby": "^8.0.1",
+    "mocha": "^5.1.1",
+    "nyc": "^12.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/robbiedhickey/vsts-demo-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "vsts-demo-cli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "robbiedhickey/vsts-demo-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
