@@ -26,7 +26,7 @@ $ npm install -g @robbiedhickey/vsts-demo-cli
 $ vsts-demo-cli COMMAND
 running command...
 $ vsts-demo-cli (-v|--version|version)
-@robbiedhickey/vsts-demo-cli/0.0.3 darwin-x64 node-v8.9.0
+@robbiedhickey/vsts-demo-cli/1.0.0 darwin-x64 node-v8.9.0
 $ vsts-demo-cli --help [COMMAND]
 USAGE
   $ vsts-demo-cli COMMAND
@@ -71,5 +71,5 @@ DESCRIPTION
   Persists VSTS configuration and user data to make future uses of the utility seamless.
 ```
 
-_See code: [src/commands/init/index.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v0.0.3/src/commands/init/index.js)_
+_See code: [src/commands/init/index.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v1.0.0/src/commands/init/index.js)_
 <!-- commandsstop -->
