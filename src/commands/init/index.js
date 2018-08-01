@@ -1,8 +1,5 @@
 const { flags } = require('@oclif/command');
 const { cli } = require('cli-ux');
-const Table = require('cli-table');
-const ora = require('ora');
-const vsts = require('vso-node-api');
 const VstsBaseCommand = require('../../vsts-base-command');
 
 class InitCommand extends VstsBaseCommand {
@@ -10,19 +7,12 @@ class InitCommand extends VstsBaseCommand {
     const url = await this.getUrl();
     const token = await this.getToken();
 
-    const authHandler = vsts.getPersonalAccessTokenHandler(token);
-    const connection = new vsts.WebApi(url, authHandler);
+    // test to see if we can connect
+    await this.loadUserConnection({ url, accessToken: token });
 
-    let spinner = ora().start('Initializing connection to VSTS');
-    await connection.connect();
-    spinner.succeed();
-
-    const otherApi = await connection.getCoreApi();
-
-    spinner = ora().start('Fetching accessible projects');
-    const projects = await otherApi.getProjects();
-    spinner.succeed();
-    this.renderTable(['Project Names'], projects.map(p => ({ name: p.name })));
+    await this.action('Saving user credentials', () =>
+      this.saveUserConfig({ url, accessToken: token })
+    );
   }
 
   async getUrl() {
@@ -30,8 +20,20 @@ class InitCommand extends VstsBaseCommand {
 
     if (!url) {
       url = await cli.prompt(
-        'What is the url of the VSTS instance? (i.e. https://myvsts.visualstudio.com)'
+        'What is the https url of your VSTS instance? (i.e. https://myvsts.visualstudio.com)'
       );
+
+      if (!url.startsWith('https://')) {
+        this.warn('You must provide an https url.');
+        return this.getUrl();
+      }
+
+      if (!url.includes('visualstudio.com')) {
+        this.warn(
+          'This utility only works with MS hosted *.visualstudio.com VSTS instances.'
+        );
+        return this.getUrl();
+      }
     }
 
     return url;
@@ -45,14 +47,6 @@ class InitCommand extends VstsBaseCommand {
     }
 
     return token;
-  }
-
-  renderTable(columns, rows) {
-    const table = new Table({ head: columns });
-    rows.forEach(row => {
-      table.push(Object.values(row));
-    });
-    this.log(table.toString());
   }
 }
 
