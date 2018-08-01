@@ -42,7 +42,9 @@
   ],
   "homepage": "https://github.com/robbiedhickey/vsts-demo-cli",
   "keywords": [
-    "oclif"
+    "oclif",
+    "vsts",
+    "cli"
   ],
   "license": "MIT",
   "main": "src/index.js",

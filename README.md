@@ -15,7 +15,9 @@ A cross-platform cli to illustrate interacting with VSTS.
 
 # Prerequisites
 
-In order to utilize this utility, the user will need to have set up a [VSTS Personal Access Token](https://docs.microsoft.com/en-us/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts).
+* Set up a [Personal Access Token](https://docs.microsoft.com/en-us/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts) in your VSTS instance.
+* Install a version of Node >= 8.
+* Install the cli globally `npm install -g @robbiedhickey/vsts-demo-cli`.
 
 # Description
 
