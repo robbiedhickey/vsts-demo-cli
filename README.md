@@ -4,8 +4,7 @@ vsts-demo-cli
 A cross-platform cli to illustrate interacting with VSTS.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/vsts-demo-cli.svg)](https://npmjs.org/package/vsts-demo-cli)
-[![License](https://img.shields.io/npm/l/vsts-demo-cli.svg)](https://github.com/robbiedhickey/vsts-demo-cli/blob/master/package.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <!-- toc -->
 * [Description](#description)
@@ -23,11 +22,11 @@ From a technical standpoint, the project illustrates some basic usage of `oclif`
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g vsts-demo-cli
+$ npm install -g @robbiedhickey/vsts-demo-cli
 $ vsts-demo-cli COMMAND
 running command...
 $ vsts-demo-cli (-v|--version|version)
-vsts-demo-cli/0.0.1 darwin-x64 node-v8.9.0
+@robbiedhickey/vsts-demo-cli/0.0.2 darwin-x64 node-v8.9.0
 $ vsts-demo-cli --help [COMMAND]
 USAGE
   $ vsts-demo-cli COMMAND
@@ -72,5 +71,5 @@ DESCRIPTION
   Persists VSTS configuration and user data to make future uses of the utility seamless.
 ```
 
-_See code: [src/commands/init/index.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v0.0.1/src/commands/init/index.js)_
+_See code: [src/commands/init/index.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v0.0.2/src/commands/init/index.js)_
 <!-- commandsstop -->
