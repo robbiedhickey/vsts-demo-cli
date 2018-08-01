@@ -33,7 +33,7 @@ $ npm install -g @robbiedhickey/vsts-demo-cli
 $ vsts-demo-cli COMMAND
 running command...
 $ vsts-demo-cli (-v|--version|version)
-@robbiedhickey/vsts-demo-cli/2.2.0 darwin-x64 node-v8.9.0
+@robbiedhickey/vsts-demo-cli/2.3.0 darwin-x64 node-v8.9.0
 $ vsts-demo-cli --help [COMMAND]
 USAGE
   $ vsts-demo-cli COMMAND
@@ -56,7 +56,7 @@ USAGE
   $ vsts-demo-cli clear
 ```
 
-_See code: [src/commands/clear.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.2.0/src/commands/clear.js)_
+_See code: [src/commands/clear.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.3.0/src/commands/clear.js)_
 
 ## `vsts-demo-cli help [COMMAND]`
 
@@ -91,7 +91,7 @@ DESCRIPTION
   Persists VSTS configuration and user data to make future uses of the utility seamless.
 ```
 
-_See code: [src/commands/init.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.2.0/src/commands/init.js)_
+_See code: [src/commands/init.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.3.0/src/commands/init.js)_
 
 ## `vsts-demo-cli projects:list`
 
@@ -102,5 +102,5 @@ USAGE
   $ vsts-demo-cli projects:list
 ```
 
-_See code: [src/commands/projects/list.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.2.0/src/commands/projects/list.js)_
+_See code: [src/commands/projects/list.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.3.0/src/commands/projects/list.js)_
 <!-- commandsstop -->
