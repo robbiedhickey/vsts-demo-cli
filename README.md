@@ -16,7 +16,7 @@ A cross-platform cli to illustrate interacting with VSTS.
 
 This package consists of a basic framework powered by `oclif` that enables a modular way to build multi-command CLIs. The feature set is currently minimal, but it will allow a user to initialize a connection to a TFS instance that they own or have access to, persist the credentials, and subsequently use the credentials in a later session to list the projects they have access to. The cli is also cross platform. 
 
-From a usability standpoint, the cli includes general and command-specific help output (i.e. `vsts-demo-cli help` and `vsts-demo-cli help init`. The cli also displays spinners with contextual messages during asynchronous operations. When errors occur in a multi-step operation, the spinners will indicate which step(s) failed, provide a more detailed error message, and terminate the process. For commands that include flags like `vsts-demo-cli init`, the cli supports both passing of the parameters explicitly as well as an interactive mode which will prompt the user for input in a guided questionnaire. The questionnaire will also perform some basic validation to help the user fall into the pit of success. The cli can also output ascii-tables to the console, which is demonstrated with the `vsts-demo-cli projects:list` command.  
+From a usability standpoint, the cli includes general and command-specific help output (i.e. `vsts-demo-cli help` and `vsts-demo-cli help init`. The cli also displays spinners with contextual messages during asynchronous operations. When errors occur in a multi-step operation, the spinners will indicate which step(s) failed, provide a more detailed error message, and terminate the process. For commands that include flags like `vsts-demo-cli init`). The cli supports both passing of the parameters explicitly as well as an interactive mode which will prompt the user for input in a guided questionnaire. The questionnaire will also perform some basic validation to help the user fall into the pit of success. The cli can also output ascii-tables to the console, which is demonstrated with the `vsts-demo-cli projects:list` command. Finally, a user can use `vsts-demo-cli clear` to purge their stored configuration settings.  
 
 From a technical standpoint, the project illustrates some basic usage of `oclif` test framework, and includes configuration for linting and measuring test coverage. If you can't live without a static type system, `oclif` also comes bundled with type declarations and embraces TypeScript in their documentation. 
 
@@ -28,7 +28,7 @@ $ npm install -g @robbiedhickey/vsts-demo-cli
 $ vsts-demo-cli COMMAND
 running command...
 $ vsts-demo-cli (-v|--version|version)
-@robbiedhickey/vsts-demo-cli/2.1.1 darwin-x64 node-v8.9.0
+@robbiedhickey/vsts-demo-cli/2.2.0 darwin-x64 node-v8.9.0
 $ vsts-demo-cli --help [COMMAND]
 USAGE
   $ vsts-demo-cli COMMAND
@@ -51,7 +51,7 @@ USAGE
   $ vsts-demo-cli clear
 ```
 
-_See code: [src/commands/clear.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.1.1/src/commands/clear.js)_
+_See code: [src/commands/clear.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.2.0/src/commands/clear.js)_
 
 ## `vsts-demo-cli help [COMMAND]`
 
@@ -86,7 +86,7 @@ DESCRIPTION
   Persists VSTS configuration and user data to make future uses of the utility seamless.
 ```
 
-_See code: [src/commands/init.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.1.1/src/commands/init.js)_
+_See code: [src/commands/init.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.2.0/src/commands/init.js)_
 
 ## `vsts-demo-cli projects:list`
 
@@ -97,5 +97,5 @@ USAGE
   $ vsts-demo-cli projects:list
 ```
 
-_See code: [src/commands/projects/list.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.1.1/src/commands/projects/list.js)_
+_See code: [src/commands/projects/list.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.2.0/src/commands/projects/list.js)_
 <!-- commandsstop -->
