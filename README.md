@@ -7,10 +7,15 @@ A cross-platform cli to illustrate interacting with VSTS.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <!-- toc -->
+* [Prerequisites](#prerequisites)
 * [Description](#description)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
+# Prerequisites
+
+In order to utilize this utility, the user will need to have set up a [VSTS Personal Access Token](https://docs.microsoft.com/en-us/vsts/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts).
 
 # Description
 
