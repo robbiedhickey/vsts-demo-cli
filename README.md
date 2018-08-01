@@ -37,9 +37,21 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`vsts-demo-cli clear`](#vsts-demo-cli-clear)
 * [`vsts-demo-cli help [COMMAND]`](#vsts-demo-cli-help-command)
 * [`vsts-demo-cli init`](#vsts-demo-cli-init)
 * [`vsts-demo-cli projects:list`](#vsts-demo-cli-projectslist)
+
+## `vsts-demo-cli clear`
+
+clears the stored user configuration settings
+
+```
+USAGE
+  $ vsts-demo-cli clear
+```
+
+_See code: [src/commands/clear.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.1.0/src/commands/clear.js)_
 
 ## `vsts-demo-cli help [COMMAND]`
 
@@ -74,7 +86,7 @@ DESCRIPTION
   Persists VSTS configuration and user data to make future uses of the utility seamless.
 ```
 
-_See code: [src/commands/init/index.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.1.0/src/commands/init/index.js)_
+_See code: [src/commands/init.js](https://github.com/robbiedhickey/vsts-demo-cli/blob/v2.1.0/src/commands/init.js)_
 
 ## `vsts-demo-cli projects:list`
 

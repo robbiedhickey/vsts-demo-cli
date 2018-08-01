@@ -1,6 +1,6 @@
 const { flags } = require('@oclif/command');
 const { cli } = require('cli-ux');
-const VstsBaseCommand = require('../../vsts-base-command');
+const VstsBaseCommand = require('../vsts-base-command');
 
 class InitCommand extends VstsBaseCommand {
   async run() {
@@ -10,7 +10,7 @@ class InitCommand extends VstsBaseCommand {
     // test to see if we can connect
     await this.loadUserConnection({ url, accessToken: token });
 
-    await this.action('Saving user credentials', () =>
+    await this.action('Saving user configuration settings', () =>
       this.saveUserConfig({ url, accessToken: token })
     );
   }
@@ -20,30 +20,39 @@ class InitCommand extends VstsBaseCommand {
 
     if (!url) {
       url = await cli.prompt(
-        'What is the https url of your VSTS instance? (i.e. https://myvsts.visualstudio.com)'
+        'What is the https url of your VSTS instance (i.e. https://myvsts.visualstudio.com)'
       );
-
-      if (!url.startsWith('https://')) {
-        this.warn('You must provide an https url.');
-        return this.getUrl();
-      }
-
-      if (!url.includes('visualstudio.com')) {
-        this.warn(
-          'This utility only works with MS hosted *.visualstudio.com VSTS instances.'
-        );
-        return this.getUrl();
-      }
     }
 
-    return url;
+    const isValid = this.validUrl(url);
+    if (isValid) return url;
+    if (this.flags.url) this.exit(-1);
+
+    // if we are in interactive mode, try again
+    return this.getUrl();
+  }
+
+  validUrl(url) {
+    if (!url.startsWith('https://')) {
+      this.warn('You must provide an https url.');
+      return false;
+    }
+
+    if (!url.includes('visualstudio.com')) {
+      this.warn(
+        'This utility only works with MS hosted *.visualstudio.com VSTS instances.'
+      );
+      return false;
+    }
+
+    return true;
   }
 
   async getToken() {
     let token = this.flags.token;
 
     if (!token) {
-      token = await cli.prompt('What is your personal access token?');
+      token = await cli.prompt('What is your personal access token');
     }
 
     return token;

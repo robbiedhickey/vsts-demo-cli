@@ -57,6 +57,15 @@ class VstsBaseCommand extends Command {
   }
 
   /**
+   * Purge user configuration
+   *
+   * @memberof VstsBaseCommand
+   */
+  async purgeUserConfig() {
+    await fs.remove(path.join(this.config.configDir, USER_CONFIG_FILE));
+  }
+
+  /**
    * Returns an initialized vsts connection.
    *
    * Will try to load from stored user settings unless configuration object is passed
