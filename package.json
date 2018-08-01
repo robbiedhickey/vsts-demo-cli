@@ -1,7 +1,7 @@
 {
   "name": "@robbiedhickey/vsts-demo-cli",
   "description": "A cross-platform cli to illustrate interacting with VSTS",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "author": "Robbie Hickey @robbiedhickey",
   "bin": {
     "vsts-demo-cli": "./bin/run"
