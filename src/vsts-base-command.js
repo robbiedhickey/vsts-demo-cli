@@ -69,9 +69,15 @@ class VstsBaseCommand extends Command {
    */
   async loadUserConnection(config) {
     if (!config) {
-      config = await fs.readJSON(
-        path.join(this.config.configDir, USER_CONFIG_FILE)
-      );
+      try {
+        config = await fs.readJSON(
+          path.join(this.config.configDir, USER_CONFIG_FILE)
+        );
+      } catch (error) {
+        this.error(
+          'You are currently unauthenticated. Please run `vsts-demo-cli init` to setup your credentials.'
+        );
+      }
     }
 
     const authHandler = vsts.getPersonalAccessTokenHandler(config.accessToken);
